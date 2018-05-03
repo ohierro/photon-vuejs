@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>📄 Docs | photon-vue</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../node_modules/photonkit/dist/css/photon.css">
     <style>
       html {
         text-align: center;
@@ -12,11 +13,35 @@
         color: #62B486;
         background: #f3f3f3;
       }
+      .content {
+        width: 80%;
+        margin-left: 10%;
+        background-color: white;
+      }
+      .row {
+        display: flex;
+        flex-grow: 1;
+        width: 100%;
+      }
+      .left {
+        width: 60%;
+      }
+      .right {
+        width: 40%;
+      }
     </style>
   </head>
   <body>
     <h1>photon-vue</h1>
-    <main id="app"></main>
+    <main id="app">
+      <div>
+        <router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/bar">Go to Bar</router-link>
+        <router-link to="/sidebar">Go to Sidebar</router-link>
+      </div>
+      <router-view></router-view>
+      <!-- <p-button text="long text"></p-button> -->
+    </main>
   </body>
 
   <script src='docs/build/docs.js'></script>

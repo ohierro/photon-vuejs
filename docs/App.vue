@@ -1,6 +1,8 @@
 <template lang="pug">
   .docs
     hello-world(emoji="🤔")
+    button-samples
+    toolbar-samples
     h3 Usage
     pre
       code(v-text="sourcecode")
@@ -8,10 +10,12 @@
 
 <script>
   import HelloWorld from '../src/HelloWorld.vue'
+  import ButtonSamples from './Buttons.vue'
+  import ToolbarSamples from './Toolbar.vue'
 
   export default {
     name: 'App',
-    components: { HelloWorld },
+    components: { HelloWorld, ButtonSamples, ToolbarSamples },
 
     data () {
       return { sourcecode: 'hello-world(emoji="🤔")' }
@@ -32,5 +36,9 @@
     border-radius: 5px;
     background: #3d3d3d;
     color: #f3f3fe;
+  }
+
+  html {
+    overflow: visible;
   }
 </style>

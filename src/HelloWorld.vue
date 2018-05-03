@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h2 Hello World!
+    h2 Hello World!!
       span {{ emoji }}
     img(src="./assets/vue.png", alt="vue")
 </template>
