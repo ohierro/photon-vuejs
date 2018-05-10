@@ -18,6 +18,8 @@ const Root = { template: '<div>this is home</div>' }
 import ButtonSamples from './Buttons.vue'
 import ToolbarSamples from './Toolbar.vue'
 import SidebarSamples from './Sidebar.vue'
+import NavSamples from './Nav.vue'
+import ExampleUI from './Example.vue'
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -29,6 +31,8 @@ const routes = [
   { path: '/foo', component: ButtonSamples },
   { path: '/bar', component: ToolbarSamples },
   { path: '/sidebar', component: SidebarSamples },
+  { path: '/nav', component: NavSamples },
+  { path: '/example', component: ExampleUI }
 ]
 
 // 3. Create the router instance and pass the `routes` option

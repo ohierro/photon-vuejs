@@ -16,7 +16,15 @@ Maecenas quis sapien turpis. Aenean vestibulum velit vitae viverra rutrum. Cras 
         <div class="window">
           <div class="window-content">
             <div class="pane-group">
-              <div class="pane-sm sidebar">...</div>
+              <div class="pane-sm sidebar">
+                 <span class="nav-group-item">
+                  <span class="icon icon-signal"></span>
+                  AirPlay
+                </span>
+                <span class="nav-group-item">
+                  <p-button icon="home" text="test"></p-button>
+                </span>
+              </div>
               <div class="pane">...</div>
             </div>
           </div>
@@ -42,8 +50,13 @@ Maecenas quis sapien turpis. Aenean vestibulum velit vitae viverra rutrum. Cras 
 </template>
 
 <script>
+// import PNav from '../src/navs/PNav.vue'
+// import PNavGroup from '../src/navs/PNavGroup.vue'
+// import PNavItem from '../src/navs/PNavItem.vue'
+
 export default {
-  name: 'SidebarSamples'
+  name: 'SidebarSamples',
+  // component: {PNav, PNavGroup, PNavItem }
 }
 </script>
 

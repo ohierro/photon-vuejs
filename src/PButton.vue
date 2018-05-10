@@ -11,21 +11,32 @@
 export default {
   name: 'PButton',
   props: ['icon', 'text', 'active'],
+  // inject: ['refresh'],
+  inject: {
+    refresh: { default: null }
+  },
   methods: {
     onclick () {
       // console.log('button clicked')
-      this.$emit('bclick')
-      console.log(this.$parent.$options.name)
-      console.log(this.$parent)
       // this.$emit('bclick')
-      if (this.$parent.$options.name === 'PButtonGroup') {
-        console.log('call parent')
-        this.$emit('bclick')
-        this.$parent.$emit('bclick')
-        this.$parent.$parent.$emit('bclick')
+      if (this.refresh !== null) {
+        this.refresh(this)
       }
+      // // console.log(this.$parent.$options.name)
+      // // console.log(this.$parent)
+      // console.log(`this.$refs ${this.$refs}`)
+      // // this.$emit('bclick')
+      // if (this.$parent.$options.name === 'PButtonGroup') {
+      //   // console.log('call parent')
+      //   // this.$emit('bclick')
+      //   this.$parent.$emit('bclick')
+      //   // this.$parent.$parent.$emit('bclick')
+      // }
 
-      // $emit('click')
+      this.$emit('click')
+    },
+    activate (active) {
+      this.active = active
     }
   },
   computed: {

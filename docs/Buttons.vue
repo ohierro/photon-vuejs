@@ -34,20 +34,20 @@
               td When button it's clicked
               td
         .right
-          .btn-group
-            p-button(icon="home", @click="buttonClicked('Home')")
-            p-button(icon="home", active="true" @click="buttonClicked('Home')")
-            p-button(icon="home", text="with text" @click="buttonClicked('Home with text')")
-            p-button(text="only text", @click="buttonClicked('Only text')")
-            p Result: {{firstExample}}
+          //- .btn-group
+          p-button(icon="home", @click="buttonClicked('Home')")
+          p-button(icon="home", active="true" @click="buttonClicked('Home')")
+          p-button(icon="home", text="with text" @click="buttonClicked('Home with text')")
+          p-button(text="only text", @click="buttonClicked('Only text')")
+          p Result: {{firstExample}}
     .row
       .left
-        p Buttons also can be grouped
+        p Buttons can also be grouped
       .right
-        p-button-group
-          p-button(icon="home")
-          p-button(icon="home")
-          p-button(icon="home")
+        p-button-group(id="buttonGroup")
+          p-button(icon="home", ref="buttonGroup")
+          p-button(icon="home", ref="buttonGroup")
+          p-button(icon="home", ref="buttonGroup")
 
     //- h3 Usage
     //- pre

@@ -2,7 +2,9 @@
   .section
     h1 Toolbar examples
     p-toolbar
-        p-button(icon="home")
+        //- p-button(icon="home")
+        a.nav-group-item
+            span(class="icon icon-home") connors
 </template>
 
 <script>

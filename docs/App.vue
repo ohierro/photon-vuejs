@@ -39,6 +39,6 @@
   }
 
   html {
-    overflow: visible;
+    overflow: visible !important;
   }
 </style>
