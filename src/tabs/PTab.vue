@@ -1,6 +1,6 @@
 <template lang="pug">
   .tab-item(:class="{ active: active }", @click="onclick") {{title}}
-      .icon.icon-cancel.icon-close-tab
+      .icon.icon-cancel.icon-close-tab(@click="onremove")
       slot
 
 </template>
@@ -10,10 +10,11 @@ export default {
   name: 'PTab',
   props: ['title','active'],
   inject: {
-    refresh: { default: null }
+    refresh: { default: null },
+    remove: { default: null }
   },
   methods: {
-    onclick() {
+    onclick () {
       console.log(`${this.title} tab clicked`)
 
       if (this.refresh !== null) {
@@ -22,6 +23,10 @@ export default {
 
       // this.$emit('click')
       // this.active = !this.active
+    },
+    onremove () {
+      // this.$emit('remove', this.title)
+      this.remove(this)
     },
     activate (active) {
       this.active = active

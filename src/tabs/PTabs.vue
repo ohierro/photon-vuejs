@@ -1,7 +1,7 @@
 <template lang="pug">
   .tab-group
     slot
-    .tab-item.tab-item-fixed
+    .tab-item.tab-item-fixed(@click="onnewtab")
       span.icon.icon-plus
 
   //- div(v-slot:content)
@@ -24,7 +24,8 @@ export default {
   components: { PTab },
   provide: function () {
     return {
-      refresh: this.refresh
+      refresh: this.refresh,
+      remove: this.remove
     }
   },
   methods: {
@@ -34,7 +35,10 @@ export default {
       }
       this.$emit('click')
     },
-  refresh (obj) {
+    onnewtab () {
+      this.$emit('newtab')
+    },
+    refresh (obj) {
       // if (this.exclusive) {
         console.log('call to refresh ' + obj)
         for (let child of this.$children) {
@@ -42,10 +46,14 @@ export default {
             child.activate(false)
           } else {
             child.activate(true)
+            this.$emit('activate', child.title)
           }
         }
       // }
     },
+    remove (obj) {
+      this.$emit('remove', obj.title)
+    }
   },
 }
 </script>

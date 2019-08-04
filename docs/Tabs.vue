@@ -34,12 +34,15 @@
               td
         .right
           .window
-            p-tabs
+            p-tabs(@activate="activate", @newtab="onnewtab", @remove="onremove")
               p-tab(title='first', active=true)
                 //- div Content of the first tab
               p-tab(title='second')
             .window-content
-              div Hello world
+              p-pane(ref="firstTab")
+                div Content of the first tab
+              p-pane(ref="secondTab")
+                div Content of the second tab
               //- div Content of the first tab
           //- .window-content
           //-   div Hello world
@@ -69,10 +72,29 @@
 <script>
 import PTabs from '../src/tabs/PTabs.vue'
 import PTab from '../src/tabs/PTab.vue'
+import PPane from '../src/PPane.vue'
 
 export default {
     name: 'TabsSamples',
-    components: {PTab, PTabs},
+    components: {PTab, PTabs, PPane},
+    methods: {
+      activate(title) {
+        if (title == 'first') {
+          this.$refs.firstTab.visible = true
+          this.$refs.secondTab.visible = false
+        } else {
+          this.$refs.firstTab.visible = false
+          this.$refs.secondTab.visible = true
+        }
+        console.log(`activated ${title} tab`)
+      },
+      onnewtab () {
+        console.log('new tab created')
+      },
+      onremove (title) {
+        console.log(`removed ${title} tab`)
+      }
+    }
     // data () {
     //   return {
     //     sourcecode: 'p-button(icon="icon" text="text")',
