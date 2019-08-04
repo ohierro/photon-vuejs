@@ -6,19 +6,22 @@
 <script>
 export default {
   name: 'PButtonGroup',
+  props: ['exclusive'],
   data: function () {
     return {
       activeComponent: {}
     }
   },
   created () {
-    this.$on('bclick', section => {
-      console.log('bclick called')
+    // if (this.exclusive) {
+    //   this.$on('bclick', section => {
+    //     console.log('bclick called')
 
-      for (let child of this.$children) {
-        console.log(`child ${child.$options.name}`)
-      }
-    })
+    //     for (let child of this.$children) {
+    //       console.log(`child ${child.$options.name}`)
+    //     }
+    //   })
+    // }
   },
   provide: function () {
     return {
@@ -30,12 +33,14 @@ export default {
   // },
   methods: {
     refresh (obj) {
-      console.log('call to refresh ' + obj)
-      for (let child of this.$children) {
-        if (child !== obj) {
-          child.activate(false)
-        } else {
-          child.activate(true)
+      if (this.exclusive) {
+        console.log('call to refresh ' + obj)
+        for (let child of this.$children) {
+          if (child !== obj) {
+            child.activate(false)
+          } else {
+            child.activate(true)
+          }
         }
       }
     },

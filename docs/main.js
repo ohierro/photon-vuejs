@@ -20,6 +20,7 @@ import ToolbarSamples from './Toolbar.vue'
 import SidebarSamples from './Sidebar.vue'
 import NavSamples from './Nav.vue'
 import ExampleUI from './Example.vue'
+import TabSamples from './Tabs.vue'
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -32,6 +33,7 @@ const routes = [
   { path: '/bar', component: ToolbarSamples },
   { path: '/sidebar', component: SidebarSamples },
   { path: '/nav', component: NavSamples },
+  { path: '/tabs', component: TabSamples },
   { path: '/example', component: ExampleUI }
 ]
 

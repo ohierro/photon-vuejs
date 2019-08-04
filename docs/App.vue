@@ -3,6 +3,7 @@
     hello-world(emoji="🤔")
     button-samples
     toolbar-samples
+    tabs-samples
     h3 Usage
     pre
       code(v-text="sourcecode")
