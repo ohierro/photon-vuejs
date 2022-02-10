@@ -29,7 +29,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "file-loader": "^0.9.0",
-    "node-sass": "^3.4.1",
+    "node-sass": "^7.0.0",
     "photonkit": "^0.1.2",
     "pug": "^2.0.0-beta6",
     "sass-loader": "^3.1.1",
